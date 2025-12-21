@@ -44,9 +44,9 @@ while [ $attempts -lt $max_attempts ]; do
     # Provide hints
     diff=$((secret_number - guess))
     if [ ${diff#-} -le 5 ]; then
-        echo "🔥 You're very close!"
+        echo "You're very close!"
     elif [ ${diff#-} -le 15 ]; then
-        echo "🌡️  You're getting warm!"
+        echo "You're getting warm!"
     fi
     
     echo ""

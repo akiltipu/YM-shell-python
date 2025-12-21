@@ -14,7 +14,7 @@ bookmark_save() {
     local name=$1
     local path=${2:-$PWD}
     echo "$name=$path" >> "$BOOKMARK_FILE"
-    echo "✓ Saved bookmark: $name -> $path"
+    echo "Saved bookmark: $name -> $path"
 }
 
 # Function: Go to bookmark
@@ -23,7 +23,7 @@ bookmark_go() {
     local path=$(grep "^$name=" "$BOOKMARK_FILE" | cut -d'=' -f2 | tail -n1)
     if [ -n "$path" ] && [ -d "$path" ]; then
         cd "$path"
-        echo "✓ Jumped to: $path"
+        echo "Jumped to: $path"
     else
         echo "✗ Bookmark not found: $name"
     fi

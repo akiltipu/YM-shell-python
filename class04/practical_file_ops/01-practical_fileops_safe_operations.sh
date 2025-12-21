@@ -16,18 +16,18 @@ safe_copy() {
     local dest=$2
     
     if [ ! -f "$src" ]; then
-        echo "✗ Source file not found: $src"
+        echo "Source file not found: $src"
         return 1
     fi
     
     if [ -f "$dest" ]; then
         local backup="${dest}.bak.$(date +%Y%m%d_%H%M%S)"
         cp "$dest" "$backup"
-        echo "✓ Created backup: $backup"
+        echo "Created backup: $backup"
     fi
     
     cp "$src" "$dest"
-    echo "✓ Copied: $src -> $dest"
+    echo "Copied: $src -> $dest"
 }
 
 # Function: Safe file move
@@ -36,7 +36,7 @@ safe_move() {
     local dest=$2
     
     if [ ! -e "$src" ]; then
-        echo "✗ Source not found: $src"
+        echo "Source not found: $src"
         return 1
     fi
     
@@ -44,13 +44,13 @@ safe_move() {
         read -p "Destination exists. Overwrite? (y/N) " -n 1 -r
         echo
         if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-            echo "✗ Move cancelled"
+            echo "Move cancelled"
             return 1
         fi
     fi
     
     mv "$src" "$dest"
-    echo "✓ Moved: $src -> $dest"
+    echo "Moved: $src -> $dest"
 }
 
 echo "1. Safe copy with backup:"
