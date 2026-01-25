@@ -1,0 +1,4 @@
+Line 1: Hello, World!
+Line 2: This is a sample file.
+Line 3: Python file reading example.
+Line 4: End of file.
